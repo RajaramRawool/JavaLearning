@@ -1,6 +1,6 @@
-package javacourse.primitivedatatypes;
+package javacourse;
 
-public class JavaCourse {
+public class PrimitiveDataTypes {
     public static void main(String[] args) {
         System.out.println("Hi, Rajaram");
         int age = 28;
@@ -57,6 +57,10 @@ public class JavaCourse {
         System.out.println("---Double Primitive Data type---");
         System.out.println("Minimum Value for Double = " + minValueDouble);
         System.out.println("Maximum Value for Double = " + maxValueDouble);
+
+//        temp code
+
+
 
 
     }
