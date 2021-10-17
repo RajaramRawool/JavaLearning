@@ -1,5 +1,6 @@
 package javacourse;
 
-public class Keywords {
+public class Keywords{
+
 
 }
