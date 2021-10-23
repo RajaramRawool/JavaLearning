@@ -1,6 +1,6 @@
 package javacourse;
 
-import javacourse.codingexercises.flowcodingexercises.NumberToWords;
+import javacourse.codingexercises.flowcodingexercises.DiagonalStar;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +23,12 @@ public class Main {
 //        System.out.println(SharedDigit.hasSharedDigit(35,12));
 //        System.out.println(LastDigitChecker.hasSameLastDigit(90,9,19));
 //        System.out.println(GreatestCommonDivisor.getGreatestCommonDivisor(33,11));
-        NumberToWords.numberToWords(11);
+//        NumberToWords.numberToWords(11);
+//        System.out.println(FlourPacker.canPack(5,3,13));
+//        System.out.println(LargestPrime.getLargestPrime(7));
+        DiagonalStar.printSquareStar(8);
+
+
     }
 
 }
