@@ -33,6 +33,7 @@ public class Main {
 //        bankAccount.withdrawFunds(50_000);
 //        bankAccount.setCustomerName("Rajaram");
 //        System.out.println(bankAccount.getCustomerName());
+
 //        VipCustomer rajaram =  new VipCustomer();
 //        System.out.println("Name of Vip Customer is "+rajaram.getName() + ", Email Adress is " + rajaram.getEmail()
 //                + " and Credit limit is " + rajaram.getCreditLimit() );
@@ -42,6 +43,27 @@ public class Main {
 //        VipCustomer anita = new VipCustomer("Anita", 1_00_000,"anita@gmail.com");
 //        System.out.println("Name of Vip Customer is "+anita.getName() + ", Email Adress is " + anita.getEmail()
 //                + " and Credit limit is " + anita.getCreditLimit() );
+
+//        Point point1 = new Point();
+//        System.out.println(point1.getX() + "," + point1.getY());
+//        System.out.println(point1.distance(6,5));
+//        Point point2 = new Point(6,5);
+//        Point point3 = new Point(3,1);
+//        System.out.println(point2.distance(point3));
+
+//        Carpet carpet = new Carpet(3.5);
+//        Floor floor = new Floor(2.75,4.0);
+//        Calculator calculator = new Calculator(floor, carpet);
+//        System.out.println(calculator.getTotalCost());
+
+//        ComplexNumber one = new ComplexNumber(1.0, 1.0);
+//        ComplexNumber number = new ComplexNumber(2.5, -1.5);
+//        one.add(1,1);
+//        System.out.println(one.getReal() +","+ one.getImaginary());
+//        one.subtract(1,1);
+//        System.out.println(one.getReal() +","+ one.getImaginary());
+//        one.add(number);
+//        System.out.println(one.getReal() +","+ one.getImaginary());
 
     }
 }
