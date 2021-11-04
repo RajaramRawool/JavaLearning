@@ -1,6 +1,6 @@
 package javacourse.codingexercises;
 
-import javacourse.Constants.CourseConstants;
+import javacourse.constants.CourseConstants;
 
 public class IntEqualityPrinter {
     public static void printEqual(int number1, int number2, int number3) {

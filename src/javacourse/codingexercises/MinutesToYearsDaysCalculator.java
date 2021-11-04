@@ -1,6 +1,6 @@
 package javacourse.codingexercises;
 
-import javacourse.Constants.CourseConstants;
+import javacourse.constants.CourseConstants;
 
 public class MinutesToYearsDaysCalculator {
     public static void printYearsAndDays(long minutes) {

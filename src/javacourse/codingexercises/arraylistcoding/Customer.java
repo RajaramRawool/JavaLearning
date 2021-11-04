@@ -1,4 +1,4 @@
-package javacourse.codingexercises.ArrayListCoding;
+package javacourse.codingexercises.arraylistcoding;
 
 import java.util.ArrayList;
 

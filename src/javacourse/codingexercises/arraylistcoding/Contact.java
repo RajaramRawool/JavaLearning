@@ -1,4 +1,4 @@
-package javacourse.codingexercises.ArrayListCoding;
+package javacourse.codingexercises.arraylistcoding;
 public class Contact {
     private String name;
     private String phoneNumber;

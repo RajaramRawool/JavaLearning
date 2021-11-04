@@ -1,6 +1,6 @@
 package javacourse.codingexercises.flowcodingexercises;
 
-import javacourse.Constants.CourseConstants;
+import javacourse.constants.CourseConstants;
 
 public class FactorPrinter {
     public static void printFactors(int number) {
