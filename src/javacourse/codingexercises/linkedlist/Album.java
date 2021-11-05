@@ -7,9 +7,11 @@ import java.util.ListIterator;
 public class Album {
     private String name;
     private String artist;
-    private ArrayList<Song> songs;
+    private SongList songs;
+//    private ArrayList<Song> songs;     //  before creating inner class
 
-    public static void main(String[] args) {
+
+   /* public static void main(String[] args) {
         ArrayList<Album> albums = new ArrayList<>();
 
         Album album = new Album("Stormbringer", "Deep Purple");
@@ -36,6 +38,15 @@ public class Album {
         album.addSong("Night of the long knives", 5.12);
         albums.add(album);
 
+        LinkedList<Song> playList = new LinkedList<Song>();
+        albums.get(0).addToPlayList("You can't do it right", playList);
+        albums.get(0).addToPlayList("Holy man", playList);
+        albums.get(0).addToPlayList("Speed king", playList);  // Does not exist
+        albums.get(0).addToPlayList(9, playList);
+        albums.get(1).addToPlayList(8, playList);
+        albums.get(1).addToPlayList(3, playList);
+        albums.get(1).addToPlayList(2, playList);
+        albums.get(1).addToPlayList(24, playList);  // There is no track 24
 //        Iterator<Album> iteratorAlbum = albums.iterator();
 //        while (iteratorAlbum.hasNext()) {
 //            Album albumNew = iteratorAlbum.next();
@@ -46,7 +57,7 @@ public class Album {
 //            }
 //        }
 
-        LinkedList<Song> playList = new LinkedList<Song>();
+    *//*    LinkedList<Song> playList = new LinkedList<Song>();
         albums.get(0).addToPlayList("You can't do it right", playList);
         albums.get(0).addToPlayList("Holy man", playList);
         albums.get(0).addToPlayList("Speed king", playList);  // Does not exist
@@ -58,61 +69,93 @@ public class Album {
         for (Song song : playList) {
             System.out.println(song);
         }
+*//*
+
+    }*/
 
 
+    public static class SongList {
+        private ArrayList<Song> songs;
+
+        public SongList() {
+            songs = new ArrayList<Song>();
+        }
+
+        private boolean add(Song song) {
+            /*if (findSong(songTitle) == null) {
+                Song newSong = new Song(songTitle, durationOfSong);
+                this.songArrayList.add(newSong);
+                return true;
+            }
+            System.out.println(findSong(songTitle).getTitle() + " Already Exists .............");
+            return false;*/
+            if (!this.songs.contains(song)) {
+                this.songs.add(song);
+                return true;
+            }
+            return false;
+        }
+
+        private Song findSong(String songTitle) {
+            ListIterator<Song> iterator = this.songs.listIterator();
+            while (iterator.hasNext()) {
+                if (iterator.next().getTitle().equalsIgnoreCase(songTitle)) {
+                    return iterator.previous();
+                }
+            }
+            return null;
+        }
+
+        private Song findSong (int trackNumber) {
+            int index = trackNumber - 1;
+            if ((index >= 0) && (index < this.songs.size())) {
+                return this.songs.get(index);
+            }
+            return null;
+        }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     public Album(String name, String artist) {
         this.name = name;
         this.artist = artist;
-        songs = new ArrayList<Song>();
+        this.songs = new SongList();
+//        songs = new ArrayList<Song>();      //  before creating inner class
     }
 
+
     public boolean addSong(String songTitle, double durationOfSong) {
-        if (findSong(songTitle) == null) {
+        Song checkedSong = this.songs.findSong(songTitle);
+
+        if (checkedSong == null) {
             Song newSong = new Song(songTitle, durationOfSong);
             this.songs.add(newSong);
+
             return true;
         }
-        System.out.println(findSong(songTitle).getTitle() + " Already Exists .............");
+        System.out.println(checkedSong.getTitle() + " Already Exists .............");
         return false;
     }
 
-    private Song findSong(String songTitle) {
-        ListIterator<Song> iterator = this.songs.listIterator();
+   /* private Song findSong(String songTitle) {                      //  before creating inner class
+        ListIterator<Song> iterator = this.songs.listIterator();   //  before creating inner class
         while (iterator.hasNext()) {
             if (iterator.next().getTitle().equalsIgnoreCase(songTitle)) {
                 return iterator.previous();
             }
         }
         return null;
-    }
+    }*/
 
     public boolean addToPlayList(int trackNumber, LinkedList<Song> song) {
-        int index = trackNumber - 1;
-        if ((index >= 0) && (index < this.songs.size())) {
+        /*int index = trackNumber - 1;
+        if ((index >= 0) && (index < this.songs.size())) {         //  before creating inner class
             song.add(this.songs.get(index));
+            return true;
+        }*/
+        Song checkedSong = this.songs.findSong(trackNumber);
+        if (checkedSong != null) {
+            song.add(checkedSong);
             return true;
         }
         System.out.println("This album does not have a track " + trackNumber);
@@ -120,11 +163,17 @@ public class Album {
     }
 
     public boolean addToPlayList(String songTitle, LinkedList<Song> song) {
-        if ((findSong(songTitle) != null)) {
+       /* if ((findSong(songTitle) != null)) {                       //  before creating inner class
             song.add(findSong(songTitle));
             return true;
+        }*/
+
+        Song checkedSong = this.songs.findSong(songTitle);
+        if (checkedSong != null) {
+            song.add(checkedSong);
+            return true;
         }
-        System.out.println("This album " + songTitle + " is not in this album");
+        System.out.println( "This album " + songTitle + " is not in this album");
         return false;
     }
 }
