@@ -3,7 +3,7 @@ package javacourse.codingexercises.generics;
 public class Main {
     public static void main(String[] args) {
         League<Team<CricketPlayer>> league = new League<>("IPL");
-        System.out.println( "======  "+league.getName()+"  ======");
+        System.out.println("======  " + league.getName() + "  ======");
         Team<CricketPlayer> cricket = new Team<>("Mumbai Indians");
         Team<FootballPlayer> football = new Team<>("Legends Team");
 
@@ -27,11 +27,8 @@ public class Main {
         football.addPlayer(messi);
         football.addPlayer(ronaldo);
 
-
-        league.printTeams();
+         league.printTeams();
         cricket.printPlayers();
         football.printPlayers();
-
-
     }
 }
