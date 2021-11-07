@@ -2,9 +2,9 @@ package javacourse.codingexercises.generics;
 
 import java.util.ArrayList;
 
-public class League {
+public class League<T extends Team>{
     private String name;
-    private ArrayList<Team> teams = new ArrayList<>();
+    private ArrayList<T> teams = new ArrayList<>();
 
     public League(String name) {
         this.name = name;
@@ -14,7 +14,7 @@ public class League {
         return name;
     }
 
-    public boolean addTeam(Team team) {
+    public boolean addTeam(T team) {
         if (this.teams.contains(team)) {
             System.out.println("Team Already exists in League");
             return false;
@@ -28,7 +28,7 @@ public class League {
         if (this.teams.isEmpty()) {
             System.out.println("There are no teams participated in League");
         }
-        for (Team team : this.teams) {
+        for (T team : this.teams) {
             System.out.println( "*\t"+ team.getName());
         }
     }
